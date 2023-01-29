@@ -1,13 +1,6 @@
-# Title
+# Travel API Project
 
-*description*
+A personal learning project for api and redux. 
 
-[deployed url](http://url-if-deployed-here)
+[deployed url](https://travel-advisor-o1hx.onrender.com/)
 
-## What Worked Well
-
-## What Didn't
-
-## Extra Credit
-
-## Screenshots
