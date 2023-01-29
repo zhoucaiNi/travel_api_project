@@ -11,7 +11,10 @@ const store = configureStore({
 });
 
 const root = createRoot(document.getElementById('main'));
-
+if (module.hot) {
+  // Accept hot update
+  module.hot.accept();
+}
 root.render(
   <Provider store={store}>
     <App />

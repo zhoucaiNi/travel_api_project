@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 import {
-  BrowserRouter as Router, Routes, Route, NavLink, useParams,
+  BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
-import Counter from './components/counter';
-import Controls from './components/controls';
+// import Counter from './components/counter';
+// import Controls from './components/controls';
+import Map from './components/map/map';
+import Header from './components/header/header';
+import List from './components/list/list';
 
 function App(props) {
   return (
     <Router>
       <div>
-        <Nav />
         <Routes>
           <Route path="/" element={<Welcome />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/test/:id" element={<Test />} />
           <Route path="*" element={<FallBack />} />
         </Routes>
       </div>
@@ -22,36 +22,29 @@ function App(props) {
   );
 }
 
-function About(props) {
-  return <div> All there is to know about me </div>;
-}
 function Welcome(props) {
+  const [childClicked, setChildClicked] = useState(null);
+
   return (
-    <div>Welcome
-      <Counter />
-      <Controls />
+    <div>
+      <Header />
+      <div className="main">
+        <List childClicked={childClicked} className="list" />
+        <Map setChildClicked={setChildClicked} className="map" />
+      </div>
     </div>
   );
 }
 
-function Nav(props) {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-
-      </ul>
-    </nav>
-  );
-}
-
-function Test(props) {
-  const { id } = useParams();
-  return <div> ID: {id} </div>;
-}
+// function Nav(props) {
+//   return (
+//     <nav>
+//       <ul>
+//         <li><NavLink to="/">Home</NavLink></li>
+//       </ul>
+//     </nav>
+//   );
+// }
 
 function FallBack(props) {
   return <div>URL Not Found</div>;

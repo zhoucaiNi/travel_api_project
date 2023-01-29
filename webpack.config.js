@@ -9,6 +9,8 @@ const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { 
 const autoprefixer = require('autoprefixer');
 const postcssPresets = require('postcss-preset-env');
 
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   mode: env,
   output: { publicPath: '/' },
@@ -67,6 +69,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),

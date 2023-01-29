@@ -1,0 +1,23 @@
+.title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:5px;
+}
+
+.search{
+  background-color:rgb(182, 186, 247);
+  border-radius: 5px;
+  align-items: center;
+}
+
+.searchIcon{
+  color: white;
+  opacity: 100;
+  // background-color: black;
+}

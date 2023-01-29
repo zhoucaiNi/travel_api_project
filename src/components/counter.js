@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 function Counter(props) {
   return (
     <div>
-      Current Count: {props.count}
+      Current Count: {props.shiba}
     </div>
   );
 }
